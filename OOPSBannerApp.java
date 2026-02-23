@@ -1,21 +1,29 @@
 /**
  * OOPSBannerApp
- * UC3: Prints OOPS in Banner Format using String.join()
+ * UC4: Render OOPS as Banner using String Array and Loop
  * @author Developer
- * @version 3.0
+ * @version 4.0
  */
 public class OOPSBannerApp {
     public static void main(String[] args) {
         printOOPSBanner();
     }
 
-    // Function to print OOPS in banner format using String.join()
+    // Function to print OOPS in banner format using String Array + Loop
     public static void printOOPSBanner() {
-        System.out.println(String.join("", "   **     **   ******   ****** "));
-        System.out.println(String.join("", " **  ** **  ** **    ** **     "));
-        System.out.println(String.join("", " **  ** **  ** **    ** **     "));
-        System.out.println(String.join("", " **  ** **  ** ******   ****** "));
-        System.out.println(String.join("", " **  ** **  ** **           **  "));
-        System.out.println(String.join("", "   **     **   **      *******  "));
+        // Store all banner lines in a String array
+        String[] bannerLines = {
+            String.join("", "   **     **   ******   ****** "),
+            String.join("", " **  ** **  ** **    ** **     "),
+            String.join("", " **  ** **  ** **    ** **     "),
+            String.join("", " **  ** **  ** ******   ****** "),
+            String.join("", " **  ** **  ** **           **  "),
+            String.join("", "   **     **   **       ******  ")
+        };
+
+        // Use enhanced for loop to print each line
+        for (String line : bannerLines) {
+            System.out.println(line);
+        }
     }
 }
