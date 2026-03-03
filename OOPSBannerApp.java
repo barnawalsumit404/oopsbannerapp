@@ -1,19 +1,55 @@
 public class OOPSBannerApp {
-    public static void main(String[] args) {
-        // Define String Array variable to hold the OOPS banner lines
-        String[] lines = {
-            String.join(" ", " *** ", " *** ", " *** ", " *** "),   // Top row
-            String.join(" ", "** **", "** **", "** **", "** **"),   // Row 2
-            String.join(" ", "** **", "** **", "** **", "** **"),   // Row 3
-            String.join(" ", "** **", "** **", " *** ", " *** "),   // Row 4
-            String.join(" ", "** **", "** **", "**    ", "   **"),  // Row 5
-            String.join(" ", "** **", "** **", "**    ", "**   "),  // Row 6
-            String.join(" ", " *** ", " *** ", "**    ", " *** ")   // Bottom row
-        };
 
-        // Print each line of the banner
-        for (String line : lines) {
-            System.out.println(line);
+    public static String[] getOPattern() {
+        return new String[]{
+                "     ***     ",
+                "  **     **  ",
+                " **       ** ",
+                " **       ** ",
+                " **       ** ",
+                " **       ** ",
+                " **       ** ",
+                "  **     **  ",
+                "     ***     "
+        };
+    }
+
+    public static String[] getPPattern() {
+        return new String[]{
+                " ******    ",
+                " **    **  ",
+                " **     ** ",
+                " **    **  ",
+                " ******    ",
+                " **        ",
+                " **        ",
+                " **        ",
+                " **        "
+        };
+    }
+
+    public static String[] getSPattern() {
+        return new String[]{
+                "    *****    ",
+                "  **         ",
+                " **          ",
+                "  **         ",
+                "    ***      ",
+                "       **    ",
+                "        **  ",
+                "       **    ",
+                "  *****      ",
+                "          "
+        };
+    }
+
+    public static void main(String[] args) {
+        String[][] banner = { getOPattern(), getOPattern(), getPPattern(), getSPattern() };
+        for (int row = 0; row < 9; row++) {
+            for (int col = 0; col < banner.length; col++) {
+                System.out.print(banner[col][row] + "  ");
+            }
+            System.out.println();
         }
     }
 }
